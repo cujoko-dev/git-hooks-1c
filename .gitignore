@@ -1,5 +1,6 @@
+# Project local artifacts
 /.artifacts/
-/.notes/
+/.notes
 /.temp/
 
 # Test fixtures generated locally
