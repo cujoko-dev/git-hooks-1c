@@ -2,8 +2,8 @@
 # Local editable dependencies declared in .dev/pyproject.toml.
 # Paths may be absolute or relative to this file's directory.
 add_dirs = [
-    '../commons',
-    '../commons-1c',
-    '../../Others/v8unpack',
-    '../parse-1c-build',
+    '../../others/v8unpack',
+    '../../python/commons',
+    '../../python/commons-1c',
+    '../../python/parse-1c-build',
 ]
