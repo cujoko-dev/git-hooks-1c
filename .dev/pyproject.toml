@@ -36,7 +36,7 @@ requires-python = ">=3.9"
 gh1c = "git_hooks_1c.__main__:run"
 
 [project.urls]
-repository = "https://github.com/Cujoko-Dev/git-hooks-1c"
+repository = "https://github.com/cujoko-dev/git-hooks-1c"
 
 [tool.pdm.build]
 package-dir = "../src"
