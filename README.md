@@ -25,7 +25,7 @@
 C:\Dev\PowerShell\dev-utils\install-pipx-editable.ps1
 ```
 
-Скрипт выполняет установку приложения из `.dev`, читает editable-зависимости из `[tool.pdm.dev-dependencies].dev` в `.dev/pyproject.toml` и инжектит найденные `-e file://...` зависимости в тот же pipx venv через `pipx runpip ... --no-deps -e <project-root>`.
+Скрипт выполняет установку приложения из `.dev`, читает editable-зависимости из `[dependency-groups].dev` в `.dev/pyproject.toml` и инжектит найденные `-e file://...` зависимости в тот же pipx venv через `pipx runpip ... --no-deps -e <project-root>`.
 
 Локальные зависимости должны указывать на корни проектов, а не на их `.dev`: editable-режим тогда смотрит на `src`, а metadata берётся из основного `pyproject.toml`. Флаг `--no-deps` важен, чтобы одна локальная зависимость не переустановила другую обратно в обычном режиме.
 

@@ -5,6 +5,9 @@ requires = ["pdm-backend"]
 [dependency-groups]
 dev = [
     "pytest>=9.0.2",
+    "-e file:///${PROJECT_ROOT}/../../commons/.dev#egg=cjk-commons",
+    "-e file:///${PROJECT_ROOT}/../../commons-1c/.dev#egg=commons-1c",
+    "-e file:///${PROJECT_ROOT}/../../parse-1c-build/.dev#egg=parse-1c-build",
 ]
 
 [project]
@@ -40,13 +43,6 @@ repository = "https://github.com/cujoko-dev/git-hooks-1c"
 
 [tool.pdm.build]
 package-dir = "../src"
-
-[tool.pdm.dev-dependencies]
-dev = [
-    "-e file:///${PROJECT_ROOT}/../../commons/.dev#egg=cjk-commons",
-    "-e file:///${PROJECT_ROOT}/../../commons-1c/.dev#egg=commons-1c",
-    "-e file:///${PROJECT_ROOT}/../../parse-1c-build/.dev#egg=parse-1c-build",
-]
 
 [tool.pdm.scripts]
 test = { cmd = "pytest", working_dir = ".." }
