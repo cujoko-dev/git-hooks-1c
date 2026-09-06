@@ -46,6 +46,9 @@ The project root on a developer machine may contain **junction** directories
 - If the junction is absent, use the system temp directory (Python:
   `tempfile.mkdtemp()`, `tempfile.TemporaryDirectory()`; PowerShell: `$env:TEMP`,
   `[System.IO.Path]::GetTempPath()`).
+- Output of a transformation or build — obfuscation, parsing, conversion,
+  normalization — goes there too. Never write it into tracked test data or
+  fixtures.
 - Do not commit `.temp/` contents.
 
 ### `.notes/`
@@ -111,7 +114,8 @@ migrations, generators, one-off scripts, and `python -c`.
 ## Environment and testing
 
 - Run Python and tests with `pdm run -p .dev ...`. Do not activate the venv by
-  hand.
+  hand. If a section below names a run wrapper for this repository, that wrapper
+  is the only entry point and overrides this line.
 - Do not edit test files unless the user asked, or the change is impossible
   without touching tests.
 
