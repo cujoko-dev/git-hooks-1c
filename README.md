@@ -22,7 +22,7 @@
 Для рабочего editable-окружения запускай:
 
 ```powershell
-C:\Dev\PowerShell\dev-utils\install-pipx-editable.ps1
+C:\Dev\Others\dev-utils\install-pipx-editable.ps1
 ```
 
 Скрипт выполняет установку приложения из `.dev`, читает editable-зависимости из `[dependency-groups].dev` в `.dev/pyproject.toml` и инжектит найденные `-e file://...` зависимости в тот же pipx venv через `pipx runpip ... --no-deps -e <project-root>`.
