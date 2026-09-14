@@ -112,6 +112,32 @@ Russian text costs more tokens per character than English.
     N -First M` or `sed -n 'N,Mp'`.
   - Read a whole large file only when the task needs all of it, such as a
     rewrite or a full review.
+- **Shared rules block in `AGENTS.md`.** The part between
+  `<!-- agent-rules:begin` and `<!-- agent-rules:end -->` is generated from
+  shared fragments, so a section with the same heading has the same text in
+  every repository.
+  - In the first repository you work in, read `AGENTS.md` whole.
+  - In the next ones, read the local part outside the block. Then list the
+    block's headings with `rg -n '^## ' AGENTS.md` and read only the sections
+    you have not seen yet.
+
+These rules cut repeated and oversized reads, not needed context. The start-up
+route (`AGENTS.md`, `.ai/*`, relevant skills) is still read once.
+
+## Commit messages
+
+- When you finish with changed files, suggest one concise, imperative commit
+  message per changed repository, in that repository's style.
+- Only suggest. Commit only on an explicit request (`/cm` or `$cm`).
+- Suggest nothing if no files changed.
+
+<!-- agent-rules:end -->` is generated from
+  shared fragments, so a section with the same heading has the same text in
+  every repository.
+  - In the first repository you work in, read `AGENTS.md` whole.
+  - In the next ones, read the local part outside the block. Then list the
+    block's headings with `rg -n '^## ' AGENTS.md` and read only the sections
+    you have not seen yet.
 
 These rules cut repeated and oversized reads, not needed context. The start-up
 route (`AGENTS.md`, `.ai/*`, relevant skills) is still read once.
