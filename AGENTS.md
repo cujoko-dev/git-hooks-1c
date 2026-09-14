@@ -85,6 +85,17 @@ and `python -c`.
 - **`pipx` is not a dev environment.** Use it only for a planned user-facing
   CLI install or a parity check.
 
+## Ruff after Python edits
+
+Ruff is a user-level CLI on PATH (`pipx install ruff`), not a project dependency.
+
+- After you change Python files, run `ruff check --fix` and `ruff format` on
+  **those files only**, from the repository root so `[tool.ruff]` is picked up.
+- Do not lint the whole tree unless the user asked.
+- If `ruff` is missing from PATH, skip it and tell the user. Do not
+  `pdm add` / `pip install` ruff, and do not install it into a venv.
+- If ruff rewrote a file, re-read only that file before continuing.
+
 ## Testing
 
 - Run tests with `pdm run -p .dev …`. If a run-wrapper section appears below,
@@ -112,26 +123,8 @@ Russian text costs more tokens per character than English.
     N -First M` or `sed -n 'N,Mp'`.
   - Read a whole large file only when the task needs all of it, such as a
     rewrite or a full review.
-- **Shared rules block in `AGENTS.md`.** The part between
-  `<!-- agent-rules:begin` and `<!-- agent-rules:end -->` is generated from
-  shared fragments, so a section with the same heading has the same text in
-  every repository.
-  - In the first repository you work in, read `AGENTS.md` whole.
-  - In the next ones, read the local part outside the block. Then list the
-    block's headings with `rg -n '^## ' AGENTS.md` and read only the sections
-    you have not seen yet.
-
-These rules cut repeated and oversized reads, not needed context. The start-up
-route (`AGENTS.md`, `.ai/*`, relevant skills) is still read once.
-
-## Commit messages
-
-- When you finish with changed files, suggest one concise, imperative commit
-  message per changed repository, in that repository's style.
-- Only suggest. Commit only on an explicit request (`/cm` or `$cm`).
-- Suggest nothing if no files changed.
-
-<!-- agent-rules:end -->` is generated from
+- **Shared rules block in `AGENTS.md`.** The part between the
+  `agent-rules:begin` and `agent-rules:end` markers is generated from
   shared fragments, so a section with the same heading has the same text in
   every repository.
   - In the first repository you work in, read `AGENTS.md` whole.
