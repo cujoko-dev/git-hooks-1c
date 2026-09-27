@@ -5,7 +5,6 @@ Shared agent guidance lives in `AGENTS.md` (this file) and `.agents/skills/`.
 
 ## Before Making Changes
 
-- Files under `.cursor/rules/` are project-only extras (globs, 1C, terminals), not a second copy of the shared rules.
 - For architecture or larger changes, read the relevant `.agents/skills/*/SKILL.md`.
 - Follow the managed sections below; they apply to every agent.
 
