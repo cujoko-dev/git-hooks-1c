@@ -12,18 +12,14 @@ jobs:
   deploy:
     runs-on: ubuntu-24.04
     steps:
-    - 
-      uses: actions/checkout@v3
-    - 
-      name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.14'
-    - 
-      name: Set up PDM
-      run: |
-        curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
-    - 
-      name: Publish package
-      run: |
-        pdm publish --username __token__ --password ${{secrets.PYPI_API_TOKEN}}
+      - uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - name: Set up PDM
+        run: |
+          curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
+      - name: Publish package
+        run: |
+          pdm publish --username __token__ --password ${{secrets.PYPI_API_TOKEN}}
