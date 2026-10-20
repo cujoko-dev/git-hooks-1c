@@ -5,7 +5,8 @@ Shared agent guidance lives in `AGENTS.md` (this file) and `.agents/skills/`.
 
 ## Before Making Changes
 
-- For architecture or larger changes, read the relevant `.agents/skills/*/SKILL.md`.
+- For architecture or larger changes, read the relevant
+  `.agents/skills/*/SKILL.md`.
 - Follow the managed sections below; they apply to every agent.
 
 ## Skills To Check
@@ -106,7 +107,8 @@ and `python -c`.
 
 ## Ruff after Python edits
 
-Ruff is a user-level CLI on PATH (`pipx install ruff`), not a project dependency.
+Ruff is a user-level CLI on PATH (`pipx install ruff`), not a project
+dependency.
 
 - After you change Python files, run `ruff check --fix` and `ruff format` on
   **those files only**, from the repository root so `[tool.ruff]` is picked up.
@@ -167,12 +169,14 @@ Do not load `.ai/*` in full when the MCP already answered.
 
 ## Shared agent board
 
-Other agents (Codex, Claude Code, Cursor) may be working on the same repositories
+Other agents (Codex, Claude Code, Cursor) may be working on the same
+repositories
 right now. The board is a small shared space for what they need from each other.
 Run it with `python C:\Dev\Others\dev-utils\board.py`; add `-h` for options.
 
 - **At the start.** When you begin work in a repository, run
-  `board.py read --repo <path relative to C:\Dev>`. Use `Python/codemask-1c-core`
+  `board.py read --repo <path relative to C:\Dev>`. Use
+  `Python/codemask-1c-core`
   or `Docker/cujoko-dev`, not the directory name alone: `cujoko-dev` exists
   in several domains. It prints about 1 KB:
   - resource locks;
