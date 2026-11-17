@@ -35,6 +35,10 @@ checkouts to open:
 `.ai/` markdown is canonical; the MCP parses it. Do not duplicate the
 map here.
 
+For 1C configuration metadata, check the existing XML dumps described in
+`C:\Dev\.ai\workspace.md` under “1C configuration dumps”. They are snapshots;
+verify the version and date before relying on them.
+
 ## External project notes (`.notes/`)
 
 `.notes/` is a junction to working notes kept outside the repository. It may be
